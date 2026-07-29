@@ -179,8 +179,8 @@ export default async function Home() {
 
         {/* CTA */}
         <section className="mx-auto w-full max-w-6xl px-6 py-16">
-          <Card className="items-center gap-4 px-8 py-12 text-center">
-            <CardHeader className="items-center gap-2">
+          <Card className="gap-4 px-8 py-12 text-center">
+            <CardHeader className="justify-items-center gap-2">
               <CardTitle className="text-2xl">Ready to make your links work harder?</CardTitle>
               <CardDescription>
                 Create a free account and start sharing smarter links today.
