@@ -1,12 +1,23 @@
+import { ClerkProvider } from "@clerk/nextjs";
+import { shadcn } from "@clerk/ui/themes";
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
-  title: "LinkSnap – Fast & Free URL Shortener",
+  title: "Link Shortener – Fast & Free URL Shortener",
   description:
-    "Shorten long URLs instantly, track clicks with analytics, create custom aliases, and generate QR codes – all for free with LinkSnap.",
+    "Shorten long URLs instantly, track clicks with analytics, create custom aliases, and generate QR codes.",
 };
 
 export default function RootLayout({
@@ -17,9 +28,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${GeistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-background text-foreground">
+        <ClerkProvider
+          appearance={{ theme: shadcn }}
+          telemetry={false}
+          signInUrl="/sign-in"
+          signUpUrl="/sign-up"
+        >
+          {children}
+        </ClerkProvider>
+      </body>
     </html>
   );
 }
