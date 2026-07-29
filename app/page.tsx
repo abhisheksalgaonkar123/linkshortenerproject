@@ -121,7 +121,12 @@ export default async function Home() {
             <SignUpButton mode="modal">
               <Button size="lg">Get started for free</Button>
             </SignUpButton>
-            <Button size="lg" variant="outline" render={<a href="#features" />}>
+            <Button
+              size="lg"
+              variant="outline"
+              nativeButton={false}
+              render={<a href="#features" />}
+            >
               See features
             </Button>
           </div>
