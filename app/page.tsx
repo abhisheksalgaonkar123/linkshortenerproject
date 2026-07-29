@@ -174,14 +174,14 @@ export default async function Home() {
 
         {/* CTA */}
         <section className="mx-auto w-full max-w-6xl px-6 py-16">
-          <Card className="items-center gap-4 px-8 py-12 text-center">
-            <CardHeader className="items-center gap-2">
+          <Card className="px-8 py-12 text-center">
+            <CardHeader className="items-center gap-2 justify-items-center">
               <CardTitle className="text-2xl">Ready to make your links work harder?</CardTitle>
               <CardDescription>
                 Create a free account and start sharing smarter links today.
               </CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="flex justify-center">
               <SignUpButton mode="modal">
                 <Button size="lg">Create your account</Button>
               </SignUpButton>
